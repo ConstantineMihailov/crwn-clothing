@@ -13,21 +13,18 @@ class Directory extends Component{
                     title: 'hats',
                     imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
                     id: 1,
-                    linkUrl: 'shop/hats',
                     linkUrl: 'hats'
                   },
                   {
                     title: 'jackets',
                     imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
                     id: 2,
-                    linkUrl: 'shop/jackets',
                     linkUrl: ''
                   },
                   {
                     title: 'sneakers',
                     imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
                     id: 3,
-                    linkUrl: 'shop/sneakers',
                     linkUrl: ''
                   },
                   {
@@ -35,7 +32,6 @@ class Directory extends Component{
                     imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
                     size: 'large',
                     id: 4,
-                    linkUrl: 'shop/womens',
                     linkUrl: ''
                   },
                   {
@@ -43,7 +39,6 @@ class Directory extends Component{
                     imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                     size: 'large',
                     id: 5,
-                    linkUrl: 'shop/mens',
                     linkUrl: ''
                   }
             ]
@@ -53,9 +48,14 @@ class Directory extends Component{
     render(){
       return (
         <div className="directory-menu">
-          {this.state.sections.map(({ id, ...otherSectionProps}) => (<MenuItem {...otherSectionProps}/>))}
+          {this.state.sections.map(({ id, ...otherSectopnProps}) => (<MenuItem key={id} {...otherSectopnProps}/>))}
         </div>
       )
+      // return (
+      //   <div className="directory-menu">
+      //     {this.state.sections.map(({ id, title, imageUrl, size, linkUrl}) => (<MenuItem key={id} linkUrl={linkUrl} title={title} size={size} imageUrl={imageUrl}/>))}
+      //   </div>
+      // )
     }
 }
 
